@@ -7,6 +7,7 @@ namespace DesignPatterns.Pattern.Structural.Adapter
     {
         Water,
         Benzene,
-        Ethanol
+        Ethanol,
+        Unknown
     }
 }
