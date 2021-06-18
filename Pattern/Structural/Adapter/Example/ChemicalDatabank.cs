@@ -1,4 +1,4 @@
-/*using System;
+using System;
 
 namespace DesignPatterns.Pattern.Structural.Adapter
 {
@@ -7,53 +7,68 @@ namespace DesignPatterns.Pattern.Structural.Adapter
     /// </summary>
     public class ChemicalDatabank
     {
-        // The databank 'legacy API'
-        public float GetCriticalPoint(string compound, string point)
+        /// <summary>
+        /// Gets thermodynamics critical point concept
+        /// </summary>
+        /// <param name="compound">Compound's name</param>
+        /// <param name="point"> M for melting point and other case for boiling point</param>
+        /// <returns></returns>
+        public float GetCriticalPoint(CompoundEnum compound, string point)
         {
             // Melting Point
             if (point == "M")
             {
-                switch (compound.ToLower())
+                switch (compound)
                 {
-                    case "water": return 0.0f;
-                    case "benzene": return 5.5f;
-                    case "ethanol": return -114.1f;
+                    case CompoundEnum.Water: return 0.0f;
+                    case CompoundEnum.Benzene: return 5.5f;
+                    case CompoundEnum.Ethanol: return -114.1f;
                     default: return 0f;
                 }
             }
             // Boiling Point
             else
             {
-                switch (compound.ToLower())
+                switch (compound)
                 {
-                    case "water": return 100.0f;
-                    case "benzene": return 80.1f;
-                    case "ethanol": return 78.3f;
+                    case CompoundEnum.Water: return 100.0f;
+                    case CompoundEnum.Benzene: return 80.1f;
+                    case CompoundEnum.Ethanol: return 78.3f;
                     default: return 0f;
                 }
             }
         }
  
-        public string GetMolecularStructure(string compound)
+        /// <summary>
+        /// Gets molecular structure
+        /// </summary>
+        /// <param name="compound">Compound's name</param>
+        /// <returns></returns>
+        public string GetMolecularStructure(CompoundEnum compound)
         {
-            switch (compound.ToLower())
+            switch (compound)
             {
-                case "water": return "H20";
-                case "benzene": return "C6H6";
-                case "ethanol": return "C2H5OH";
+                case CompoundEnum.Water: return "H20";
+                case CompoundEnum.Benzene: return "C6H6";
+                case CompoundEnum.Ethanol: return "C2H5OH";
                 default: return "";
             }
         }
  
-        public double GetMolecularWeight(string compound)
+        /// <summary>
+        /// Gets molecular weight
+        /// </summary>
+        /// <param name="compound">Compound's name</param>
+        /// <returns></returns>
+        public double GetMolecularWeight(CompoundEnum compound)
         {
-            switch (compound.ToLower())
+            switch (compound)
             {
-                case "water": return 18.015;
-                case "benzene": return 78.1134;
-                case "ethanol": return 46.0688;
+                case CompoundEnum.Water: return 18.015;
+                case CompoundEnum.Benzene: return 78.1134;
+                case CompoundEnum.Ethanol: return 46.0688;
                 default: return 0d;
             }
         }
     }
-}*/
+}
