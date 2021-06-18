@@ -1,5 +1,3 @@
-using System;
-
 namespace DesignPatterns.Pattern.Structural.Adapter
 {
     /// <summary>
