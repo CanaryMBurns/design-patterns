@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPatterns.Pattern.Creational.AbstractFactory;
 using DesignPatterns.Pattern.Structural.Adapter;
 
 namespace DesignPatterns
